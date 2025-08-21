@@ -1,1 +1,1 @@
-# Sem5-miniProject
+# Event Managing System
