@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+  <h2>Welcome <%= user.name %>!</h2>
+  <p>Your role: <%= user.role %></p>
+
+  <% if (user.role === "student") { %>
+    <h3>Available Events:</h3>
+    <ul>
+      <li>Hackathon - Jan 2025</li>
+      <li>Workshop on AI</li>
+    </ul>
+  <% } else if (user.role === "faculty") { %>
+    <h3>Faculty Dashboard</h3>
+    <p>Create & Manage Events</p>
+  <% } else { %>
+    <h3>Admin Dashboard</h3>
+    <p>View Reports & Logs</p>
+  <% } %>
+</body>
+</html>
