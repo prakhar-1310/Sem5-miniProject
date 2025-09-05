@@ -5,52 +5,64 @@ body {
   padding: 50px;
   margin: 0;
   transition: background 0.5s ease, color 0.5s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Light Mode */
 body.light-mode {
-  background: #f5f5f5;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
   color: #222;
 }
 
 /* Dark Mode */
 body.dark-mode {
-  background: #0d0d0d;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
   color: #f5f5f5;
 }
 
 /* Headings */
 h1 {
   margin-bottom: 20px;
-  font-size: 2.5rem;
-  text-shadow: 0px 0px 15px rgba(140, 82, 255, 0.6);
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6c63ff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s infinite alternate;
 }
 
 /* Buttons */
 .btn {
   display: inline-block;
-  margin: 10px;
-  padding: 12px 24px;
+  margin: 12px;
+  padding: 14px 28px;
   font-size: 16px;
+  font-weight: 600;
   text-decoration: none;
   color: white;
-  background: #007BFF;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  border-radius: 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .btn:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #0056b3, #007BFF);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
 }
 
 .register-btn {
-  background: #28a745;
+  background: linear-gradient(135deg, #28a745, #1e7e34);
 }
 
 .register-btn:hover {
-  background: #1e7e34;
+  background: linear-gradient(135deg, #1e7e34, #28a745);
 }
 
 /* Floating Theme Toggle Button */
@@ -58,19 +70,37 @@ h1 {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border: none;
   border-radius: 50%;
-  background: #6c63ff;
+  background: linear-gradient(135deg, #6c63ff, #00c6ff);
   color: white;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
-  box-shadow: 0px 4px 20px rgba(108, 99, 255, 0.6);
+  box-shadow: 0px 6px 25px rgba(108, 99, 255, 0.7);
   transition: transform 0.3s ease, background 0.3s ease;
+  animation: pulse 1.8s infinite;
 }
 
 .theme-toggle-btn:hover {
-  background: #4e44d6;
-  transform: rotate(20deg) scale(1.1);
+  background: linear-gradient(135deg, #4e44d6, #007BFF);
+  transform: rotate(20deg) scale(1.15);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0px 0px 15px rgba(140, 82, 255, 0.5); }
+  to   { text-shadow: 0px 0px 25px rgba(140, 82, 255, 0.9); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 15px rgba(108, 99, 255, 0.6); }
+  50% { transform: scale(1.1); box-shadow: 0 0 25px rgba(108, 99, 255, 0.9); }
+  100% { transform: scale(1); box-shadow: 0 0 15px rgba(108, 99, 255, 0.6); }
 }
