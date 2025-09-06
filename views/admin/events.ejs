@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Events</h1>
+    <section>
+            <% for (let item of events){ %>
+                <div>
+                    <h1>Event: <%=item.Event%> </h1>
+                    <h2>Description: <%=item.des%> </h2>
+                    <a href="/event/<%=item.id%>/edit">Edit</a>
+                    <form action="/event/<%=item.id%>?_method=Delete" method="Post">
+                        <button type="submit"> Delete </button>
+                    </form>
+                </div>
+            <% } %>
+        
+    </section>
+</body>
+</html>
